@@ -18,7 +18,6 @@ RUN sed -ri -e 's!/var/www/! ${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.con
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 ENV COMPOSER_ALLOW_SUPERUSER=1
 COPY . .
-RUN mv .env.example .env
 # Устанавливаем зависимости проекта
 RUN composer install
 # Установка прав на исполнение для run.sh
