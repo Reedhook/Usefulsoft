@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('inventories', function (Blueprint $table) {
             $table->id();
             $table->string('name')->comment('Название инвентаря');
-            $table->boolean('status')->comment('Статус инвентаря');
+            $table->string('status')->default('свободен')->comment('Статус инвентаря');
             $table->unsignedInteger('price_per_day')->comment('оплата за день');
             $table->unsignedInteger('price_per_week')->comment('оплата за неделю');
             $table->timestamps();
