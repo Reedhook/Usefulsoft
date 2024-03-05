@@ -12,9 +12,9 @@ class UpdateController extends Controller
 {
     public function update(UpdateRequest $request, $id): JsonResponse
     {
-        $data = $request->validated();
+        $data = $request->all();
         if(isset($data['status'])){
-            $data['status'] = $data['status']?'В аренде':'свободен';
+            $data['status'] = $data['status']?'свободен':'В аренде';
         }
         $inventory = Inventory::findOrFail($id);
         $inventory->update($data);

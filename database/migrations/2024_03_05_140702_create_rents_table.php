@@ -16,9 +16,11 @@ return new class extends Migration
             $table->unsignedBigInteger('client_id');
             $table->unsignedBigInteger('employee_id');
             $table->unsignedBigInteger('inventory_id');
-            $table->dateTime('start_date');
-            $table->dateTime('end_date');
-            $table->integer('payment_amount');
+            $table->integer('price_day')->comment('Время на которое в аренде');
+            $table->boolean('is_finished')->default(false)->comment('Статус закрытия сделки');
+            $table->timestamp('start_date');
+            $table->timestamp('end_date');
+            $table->unsignedInteger('payment_amount');
             $table->timestamps();
         });
     }

@@ -9,6 +9,11 @@ use Illuminate\Http\JsonResponse;
 
 class CreateController extends Controller
 {
+    /**
+     * Метод для добавление новых инвентарей
+     * @param StoreRequest $request
+     * @return JsonResponse
+     */
     public function store(StoreRequest $request): JsonResponse
     {
         $data =$request->validated();
