@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('incomes_schedules', function (Blueprint $table) {
             $table->id();
-            $table->date('date');
-            $table->integer('income');
+            $table->date('date')->comment('День');
+            $table->integer('income')->comment('Прибыль');
             $table->timestamps();
         });
     }

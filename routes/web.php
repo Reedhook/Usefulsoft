@@ -14,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('{page}',function (){
+Route::get('/form',function (){
     return view('index');
-})->where('page', '.*');
+});
+Route::get('/graphics/schedule',[App\Http\Controllers\Income\IndexController::class, 'indexSchedule'])->name('income.graphic');
+Route::get('/graphics/employee',[App\Http\Controllers\Income\IndexController::class, 'indexEmployee'])->name('income.table');

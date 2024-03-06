@@ -25,6 +25,8 @@ Route::group(['prefix' => 'inventories'], function (){
 });
 Route::get('/employees',[App\Http\Controllers\Employee\IndexController::class, 'index'])->name('employee.index');
 Route::get('/clients',[App\Http\Controllers\Client\IndexController::class, 'index'])->name('client.index');
+Route::get('/incomes/schedule', [App\Http\Controllers\Income\IndexController::class, 'indexSchedule'])->name('income.schedule');
+Route::get('/incomes/employee', [App\Http\Controllers\Income\IndexController::class, 'indexEmployee'])->name('income.employee');
 
 Route::group(['prefix' => 'rents'], function (){
     Route::get('/', [App\Http\Controllers\Rent\IndexController::class, 'index'])->name('rent.index');
