@@ -23,6 +23,9 @@ Route::group(['prefix' => 'inventories'], function (){
     Route::patch('/{inventory_id}', [App\Http\Controllers\Inventory\UpdateController::class, 'update'])->name('inventory.update');
     Route::delete('/{inventory_id}', [App\Http\Controllers\Inventory\DeleteController::class, 'delete'])->name('inventory.delete');
 });
+Route::get('/employees',[App\Http\Controllers\Employee\IndexController::class, 'index'])->name('employee.index');
+Route::get('/clients',[App\Http\Controllers\Client\IndexController::class, 'index'])->name('client.index');
+
 Route::group(['prefix' => 'rents'], function (){
     Route::get('/', [App\Http\Controllers\Rent\IndexController::class, 'index'])->name('rent.index');
     Route::post('/', [App\Http\Controllers\Rent\CreateController::class, 'store'])->name('rent.store');

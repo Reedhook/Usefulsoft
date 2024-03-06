@@ -26,12 +26,14 @@ class CreateController extends Controller
         $inventory = Inventory::find($data['inventory_id']);
 
         ($inventory->status == 'свободен') ?: throw new Exception('Инвентарь уже занят');
+        $inventory->status ='В аренде';
 
         $data['start_date'] = now();
         $data['price_day'] ?
             (($data['price_day'] = 1) && ($data['end_date'] = Carbon::parse($data['start_date'])->addDays(7)) && ($data['payment_amount'] = $inventory['price_per_day']))
             : (($data['price_day'] = 7) && ($data['end_date'] = Carbon::parse($data['start_date'])->addDay()) && ($data['payment_amount'] = $inventory['price_per_week']));
         $response = Rent::create($data);
+
         $data = [
             'date' => $response->created_at->format('Y-m-d'),
             'income' => $response->payment_amount
@@ -62,7 +64,7 @@ class CreateController extends Controller
             EmployeeIncome::create($data);
         }
 
-
+        $inventory->save();
         $rent = Rent::find($response['id']);
         return $this->OkResponse($rent, 'rent');
     }

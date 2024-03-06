@@ -20,13 +20,13 @@ class Controller extends BaseController
             'body' => [
                 $alias => $model
             ]
-        ]);
+        ])->header('Access-Control-Allow-Origin', '*');
     }
 
     public function deleteResponse(): JsonResponse
     {
         return response()->json([
             'status' => true
-        ]);
+        ])->header('Access-Control-Allow-Origin', '*');
     }
 }

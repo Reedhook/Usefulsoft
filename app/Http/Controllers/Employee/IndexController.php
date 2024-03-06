@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Inventory;
+namespace App\Http\Controllers\Employee;
 
 use App\Http\Controllers\Controller;
-use App\Models\Inventory;
+use App\Models\Employee;
 use Illuminate\Http\JsonResponse;
 
 class IndexController extends Controller
@@ -14,6 +14,6 @@ class IndexController extends Controller
      */
     public function index(): JsonResponse
     {
-        return $this->OkResponse(Inventory::all(), 'inventories');
+        return $this->OkResponse(Employee::all(), 'employees');
     }
 }
