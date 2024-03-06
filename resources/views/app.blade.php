@@ -12,6 +12,47 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/css/app.css'])
 </head>
+<style>
+    .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .container button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    .container input[type="radio"] {
+        margin-right: 10px;
+    }
+
+    .container #sendData {
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    .container #sendData:hover {
+        background-color: #218838;
+    }
+
+    .container label {
+        margin-left: 5px;
+    }
+
+    .container div {
+        margin-top: 10px;
+    }
+
+</style>
 <body>
 <div id="app" class="m-lg-2">
     @yield('content')

@@ -4,7 +4,7 @@ services:
     app:
         image: 0.0.1
         user: "1000:1000"
-        container_name: app_app
+        container_name: apps_app
         build:
             context: .
             dockerfile: Dockerfile

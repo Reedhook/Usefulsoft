@@ -9,6 +9,7 @@ cd /var/www/html
 php artisan migrate
 php artisan db:seed
 npm install
+php artisan key:generate
 # Бесконечный цикл для удержания контейнера активным
 apache2-foreground
 
