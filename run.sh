@@ -8,7 +8,7 @@ cd /var/www/html
 # Выполнение миграции базы данных
 php artisan migrate
 php artisan db:seed
-npm run install
+npm install
 # Бесконечный цикл для удержания контейнера активным
 apache2-foreground
 

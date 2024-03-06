@@ -112,7 +112,7 @@
     // Кнопка для выбора сотрудника
     document.getElementById('showEmployee').addEventListener('click', function() {
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'http://localhost:8000/api/employees', true);
+        xhr.open('GET', 'http://localhost:8081/api/employees', true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -131,7 +131,7 @@
     // Кнопка для просмотра клиентов
     document.getElementById('showClient').addEventListener('click', function() {
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'http://localhost:8000/api/clients', true);
+        xhr.open('GET', 'http://localhost:8081/api/clients', true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -150,7 +150,7 @@
     // Кнопка для выбора инвентаря
     document.getElementById('showInventory').addEventListener('click', function() {
         var xhr = new XMLHttpRequest();
-        xhr.open('GET', 'http://localhost:8000/api/inventories', true);
+        xhr.open('GET', 'http://localhost:8081/api/inventories', true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.onreadystatechange = function() {
             if (xhr.readyState === XMLHttpRequest.DONE) {
@@ -182,7 +182,7 @@
             };
 
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'http://localhost:8000/api/rents', true);
+            xhr.open('POST', 'http://localhost:8081/api/rents', true);
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === XMLHttpRequest.DONE) {

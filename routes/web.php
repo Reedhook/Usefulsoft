@@ -17,5 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/form',function (){
     return view('index');
 });
-Route::get('/graphics/schedule',[App\Http\Controllers\Income\IndexController::class, 'indexSchedule'])->name('income.graphic');
-Route::get('/graphics/employee',[App\Http\Controllers\Income\IndexController::class, 'indexEmployee'])->name('income.table');
+Route::get('/incomes/schedule',[App\Http\Controllers\Income\IndexController::class, 'indexSchedule'])->name('income.graphic');
+Route::get('/incomes/employee',[App\Http\Controllers\Income\IndexController::class, 'indexEmployee'])->name('income.table');
